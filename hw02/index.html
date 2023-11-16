@@ -228,7 +228,7 @@
 
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      在這次的數據可視化作業中，我使用Observable平台和JC語言創建了直方圖和條形圖來展示年份和星座的出生人數。過程中，我遇到了幾個挑戰，特別是在修改X軸以正確顯示星座方面。為了解決這個問題，我採用了兩種主要方法：一種是提取前12個星座的值來設定X軸的範圍，另一種則是使用轉換函數來顯示每個數字對應的星座名稱。這些方法幫助我有效地解決了這些技術問題。這次經驗讓我深刻體會到即使是基本的圖表也能有效地傳遞重要信息，同時也增強了我的數據處理和可視化技能。
     </div>
   </div>
 
@@ -242,22 +242,44 @@
           <th>配分</th>
           <th>分項描述</th>
         </tr>
+
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td rowspan="16" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked="checked"></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline-1 - 以histogram呈現每個年份出生的人數</td>
         </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+
+         <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked="checked"></td>
+          <td id='m2’>2</td>
+          <td>Simple baseline-2 - 可調整margin, fill color, tip</td>
         </tr>
+        
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked="checked"></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td>Medium baseline-1 - 以bar chart呈現每個年份出生的人數</td>
         </tr>
+
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
+          <td id='m4 ' >2</td>
+          <td>Medium baseline-2 - 可調整margin, fill color, tip </td>
+        </tr>
+        
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked"></td>
+          <td id='m5 ' >1</td>
+          <td>Strong baseline-1 - 以bar chart呈現每個星座的人數 </td>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked"></td>
+          <td id='m6' >1</td>
+          <td>Strong baseline-2 - 以histogram呈現每個星座的人數 </td>
+        </tr>
+        
       </table>
     </div>
   </div>
@@ -300,7 +322,7 @@
   <div class="row hw12">
     <div class="col-md-12 twenty">
       <iframe width="100%" height="500" frameborder="0" style="background-color: #FFFFFF"
-  src=“…."></iframe>  
+  src="https://observablehq.com/embed/380c2aa05d356c22?cell=*"></iframe>  
     </div>
   </div>
 
@@ -328,7 +350,7 @@
 
   update();
   
-  function update(){
+function update(){
 
     var score = 0;
 
@@ -344,8 +366,21 @@
       score += parseInt(d3.select('#m3').html());   
     }
 
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());   
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
+    }
+
     d3.select("#myTotal").html(score);    
   }
+
 </script>
 
 </body>
