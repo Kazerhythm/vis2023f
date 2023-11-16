@@ -1,0 +1,14 @@
+{
+  "name": "380c2aa05d356c22",
+  "main": "380c2aa05d356c22@68.js",
+  "version": "68.0.0",
+  "homepage": "https://observablehq.com/d/380c2aa05d356c22",
+  "author": {
+    "name": "北科大-蔡嘉銨's Workspace",
+    "url": "https://observablehq.com/@bei-ke-da-cai-jia-an-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
