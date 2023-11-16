@@ -1,4 +1,5 @@
-
+<!-- 範例程式碼：https://github.com/Zhen1701/vis2023f/blob/main/hw01/src-easy/index.html -->
+<!-- 範例程式碼：https://github.com/AcerPing/vis2023f/blob/main/hw01/src-easy/index.html -->
 <!-- https://www.geeksforgeeks.org/how-to-export-html-table-to-csv-using-javascript/ -->
 
 <!DOCTYPE html>
@@ -69,7 +70,7 @@ a1 = createArray();     // [] or new Array()
 a2 = createArray(2);    // new Array(2)
 //alert(a2);
 
-a3 = createArray(10, 13); // [new Array(2),
+a3 = createArray(121, 13); // [new Array(2),
                    //  new Array(2),
                    //  new Array(2)]
 //alert(a3);
@@ -78,16 +79,42 @@ a3[0] = ['序號', '班級', '學號', '姓名', 'GitHub', '作業一', '作業�
 
 for (var i = 1; i < a3.length; i++) {
     a3[i][0] = i;
-    a3[i][1] = '電資四';
-    a3[i][2] = 112598000 + Math.floor(Math.random() * 999);
-    //a3[i][1] = '路人甲'; // 4E00-9FFF
-    //a3[i][1] = String.fromCharCode(0x6771);
+
+    // 虛構學號1~3碼: 隨機選擇 111 或 112
+    var studentID13 = Math.random() < 0.5 ? '111' : '112';
+    
+    // 隨機選擇班級
+    var classes = ['資工系', '資工所', '電資AI', '電資資安', '創新AI'];
+    var studentClass = classes[Math.floor(Math.random() * classes.length)];
+    a3[i][1] = studentClass;
+    
+    // 生成學號的不同部分
+    var studentID46;
+    if (studentClass === '資工系') {
+        studentID46 = '590';
+    } else if (studentClass === '資工所') {
+        studentID46 = '598';
+    } else if (studentClass === '電資AI') {
+        studentID46 = 'C52';
+    } else if (studentClass === '電資資安') {
+        studentID46 = 'C53';
+    } else if (studentClass === '創新AI') {
+        studentID46 = 'C71';
+    }
+
+    var studentID79 = (Math.floor(Math.random() * 999) + 1).toString().padStart(3, '0')
+    //將學號組成規定格式
+    a3[i][2] = studentID13 + studentID46 + studentID79;
+
+    
+    //a3[i][3] = '路人甲'; // 4E00-9FFF
+    //a3[i][3] = String.fromCharCode(0x6771);
     a3[i][3] = String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
                String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00)) +
                String.fromCharCode(Math.floor(Math.random() * 0x51ff + 0x4e00));
     
     
-    //a3[i][2] = 'github';
+    //a3[i][4] = 'github';
     // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
     // Math.random() 會回傳一個偽隨機小數 (pseudo-random) 介於 0 到 1 之間(包含 0，不包含 1) 
     // str.substring(indexStart[, indexEnd])
