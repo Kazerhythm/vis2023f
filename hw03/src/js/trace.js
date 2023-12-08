@@ -1,5 +1,5 @@
 const icon = document.getElementById('icon');
-const jsonUrl = '../json/AerobicData.json';
+const jsonUrl = '../json/userLocationData.json';
 const traceContainer = document.getElementById('trace-container'); // 假設有一個元素用於容納移動痕跡
 let currentIndex = 0;
 let currentFloor = '1F'; // 新增 currentFloor 變數

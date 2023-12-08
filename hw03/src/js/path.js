@@ -37,7 +37,7 @@ loadjson();
 setInterval(loadjson, 1000);
 */
 const icon = document.getElementById('icon');
-const jsonUrl = '../json/AerobicData.json';
+const jsonUrl = '../json/userLocationData.json';
 let currentIndex = 0;
 let currentFloor = '1F'; // 新增 currentFloor 變數
 
