@@ -58,4 +58,4 @@ function loadjson() {
 loadjson();
 
 // 每秒更新一次位置
-setInterval(loadjson, 10);
+setInterval(loadjson, 50);
