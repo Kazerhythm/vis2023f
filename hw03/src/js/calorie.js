@@ -40,4 +40,4 @@ let calorieData = null;
 loadjson();
 
 // 每秒更新一次位置
-setInterval(loadjson, 50);
+setInterval(loadjson, 100);
